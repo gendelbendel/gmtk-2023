@@ -5,16 +5,18 @@ using UnityEngine;
 public class Hero : MonoBehaviour
 {
 
-  private int level
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+  [SerializeField]
+  private int level;
 
-       // Update is called once per frame
+  // Start is called before the first frame update
+  void Start()
+  {
+
+  }
+
+  // Update is called once per frame
   void Update()
   {
-      
+
   }
 }
