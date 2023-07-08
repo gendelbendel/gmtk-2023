@@ -62,6 +62,7 @@ public class Quest
     _difficulty = Difficulty.Easy;
     _partySize = (int)_difficulty + 1;
     _theme = GetRandomTheme();
+    GenerateObjective();
     GenerateRewards();
   }
 
@@ -91,4 +92,13 @@ public class Quest
 
   }
 
+  public void GenerateObjective()
+  {
+
+  }
+
+  public string GetQuestObjectiveText()
+  {
+    return "lol";
+  }
 }
