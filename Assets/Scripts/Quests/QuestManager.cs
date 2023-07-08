@@ -11,6 +11,7 @@ public class QuestManager : MonoBehaviour
   private List<Quest> _failedQuests;
   public List<Quest> _currentQuestOptions;
   private int _currentMaxQuestOptions;
+  private int _absoluteMaxQuestOptions;
   private int _highlightedQuestIndex;
   private bool _hasConfirmedQuest;
 
@@ -25,9 +26,10 @@ public class QuestManager : MonoBehaviour
     _failedQuests = new List<Quest>();
     _currentQuestOptions = new List<Quest>();
 
-    _currentMaxQuestOptions = 4;
+    _currentMaxQuestOptions = 3;
+    _absoluteMaxQuestOptions = 4;
     _highlightedQuestIndex = -1;
-    _hasConfirmedQuest = false;
+    // _hasConfirmedQuest = false;
     RegenerateQuestOptions();
   }
 
@@ -39,9 +41,9 @@ public class QuestManager : MonoBehaviour
 
   public void SetMaxQuestQuantity(int qty)
   {
-    if (qty > 4)
+    if (qty > _absoluteMaxQuestOptions)
     {
-      _currentMaxQuestOptions = 4;
+      _currentMaxQuestOptions = _absoluteMaxQuestOptions;
       return;
     }
     if (qty < 1)
@@ -72,9 +74,6 @@ public class QuestManager : MonoBehaviour
 
   public void UpdateQuestDetails()
   {
-    // if(questDetailsScreen.activeSelf) {
-
-    // }
     GameObject.Find("QuestType").GetComponent<TextMeshProUGUI>().text = $"Quest: {_currentQuest.GetThemeName()}";
     GameObject.Find("XPRewardAmount").GetComponent<TextMeshProUGUI>().text = _currentQuest.GetReward().Exp.ToString();
     GameObject.Find("GoldRewardAmount").GetComponent<TextMeshProUGUI>().text = _currentQuest.GetReward().Gold.ToString();
@@ -127,7 +126,7 @@ public class QuestManager : MonoBehaviour
   public void ConfirmQuest(int index)
   {
     _currentQuest = _currentQuestOptions[index];
-    _hasConfirmedQuest = true;
+    // _hasConfirmedQuest = true;
     ClearQuestOptions();
   }
 
@@ -146,7 +145,7 @@ public class QuestManager : MonoBehaviour
   public void ClearQuestOptions()
   {
     _currentQuestOptions.Clear();
-    for (int i = 0; i < _currentMaxQuestOptions; i++)
+    for (int i = 0; i < _absoluteMaxQuestOptions; i++)
     {
       ClearQuestOption(i);
     }
@@ -161,7 +160,7 @@ public class QuestManager : MonoBehaviour
   public void RegenerateQuestOptions()
   {
     ClearQuestOptions();
-    _hasConfirmedQuest = false;
+    // _hasConfirmedQuest = false;
     _currentQuest = null;
     for (int i = 0; i < _currentMaxQuestOptions; i++)
     {

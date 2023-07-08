@@ -2,21 +2,33 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Hero : MonoBehaviour
+
+namespace Characters
 {
-
-  [SerializeField]
-  private int level;
-
-  // Start is called before the first frame update
-  void Start()
+  public class Hero : MonoBehaviour
   {
+    //(Name, Level, XP, GoldInventory, Class, Cost, Status)
+    [SerializeField]
 
-  }
+    public string Name { get; set; }
+    public int Level { get; set; }
+    public int XP { get; set; }
+    public int GoldInventory { get; set; }
+    public string Class { get; set; }
+    public int Cost { get; set; }
+    public int Status { get; set; }
 
-  // Update is called once per frame
-  void Update()
-  {
 
+    // Start is called before the first frame update
+    void Start()
+    {
+
+    }
+
+    // Update is called once per frame
+    void Update()
+    {
+
+    }
   }
 }

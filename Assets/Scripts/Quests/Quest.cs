@@ -9,7 +9,8 @@ public class Quest
     Easy,
     Medium,
     Hard,
-    Insane
+    Insane,
+    Final
   }
 
   public enum Theme

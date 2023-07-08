@@ -16,27 +16,27 @@ public class Reward
       case Quest.Theme.Simple:
         Exp = DiceRoller.Roll(1, 5) * ((int)diff + 1);
         Gold = DiceRoller.Roll(100, 300) * ((int)diff + 1);
-        Corruption = DiceRoller.Roll(0, 1) * ((int)diff + 1);
+        Corruption = DiceRoller.Roll(1, 2) * ((int)diff + 1);
         break;
       case Quest.Theme.Slay:
         Exp = DiceRoller.Roll(1, 5) * ((int)diff + 1);
         Gold = DiceRoller.Roll(100, 300) * ((int)diff + 1);
-        Corruption = DiceRoller.Roll(0, 1) * ((int)diff + 1);
+        Corruption = DiceRoller.Roll(1, 2) * ((int)diff + 1);
         break;
       case Quest.Theme.Save:
         Exp = DiceRoller.Roll(1, 5) * ((int)diff + 1);
         Gold = DiceRoller.Roll(100, 300) * ((int)diff + 1);
-        Corruption = DiceRoller.Roll(0, 1) * ((int)diff + 1);
+        Corruption = DiceRoller.Roll(1, 2) * ((int)diff + 1);
         break;
       case Quest.Theme.Steal:
         Exp = DiceRoller.Roll(1, 5) * ((int)diff + 1);
         Gold = DiceRoller.Roll(100, 300) * ((int)diff + 1);
-        Corruption = DiceRoller.Roll(0, 1) * ((int)diff + 1);
+        Corruption = DiceRoller.Roll(1, 2) * ((int)diff + 1);
         break;
       default:
         Exp = DiceRoller.Roll(1, 5) * ((int)diff + 1);
         Gold = DiceRoller.Roll(100, 300) * ((int)diff + 1);
-        Corruption = DiceRoller.Roll(0, 1) * ((int)diff + 1);
+        Corruption = DiceRoller.Roll(1, 2) * ((int)diff + 1);
         break;
     }
   }

@@ -273,12 +273,12 @@ GameObject:
   - component: {fileID: 5980105952567639186}
   - component: {fileID: 89550607830361259}
   m_Layer: 0
-  m_Name: Button
+  m_Name: CancelButton
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1200903674344577656
 RectTransform:
   m_ObjectHideFlags: 0
