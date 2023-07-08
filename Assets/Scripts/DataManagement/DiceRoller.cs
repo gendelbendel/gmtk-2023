@@ -2,17 +2,17 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class DiceRoller : MonoBehaviour
+public static class DiceRoller
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+  public static System.Random r = new System.Random();
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+  public static int Roll(int min, int max)
+  {
+    return r.Next(min, max);
+  }
+
+  public static int GetRandomObject<T>(T[] objects)
+  {
+    return Roll(0, objects.Length);
+  }
 }
