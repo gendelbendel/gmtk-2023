@@ -17,10 +17,40 @@ namespace Characters
       }
     }
 
-    public Hero(int gold, string heroClass) : base("HeroDefault", 1)
+    public string ClassIconSpriteName { get; set; } = "";
+    public Sprite ClassIconSprite;
+    public bool HasClassIcon
+    {
+      get
+      {
+        return ClassIconSpriteName.Length > 0 ? true : false;
+      }
+    }
+
+    public Hero(int gold, string heroClass) : base(1)
     {
       GoldInventory = gold;
       Class = heroClass;
+    }
+
+    public void LoadClassIconSprite()
+    {
+      if (HasClassIcon)
+      {
+        ClassIconSprite = ResourceLoader.LoadResource<Sprite>(ClassIconSpriteName);
+      }
+      else
+      {
+        Debug.Log("No ClassIcon");
+      }
+    }
+
+    public void LoadAllSprites()
+    {
+      LoadClassIconSprite();
+      LoadShieldSprite();
+      LoadWeaponSprite();
+      LoadCharacterSprite();
     }
   }
 }

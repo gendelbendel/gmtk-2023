@@ -1,17 +1,29 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 namespace Characters
 {
+
+  public enum HeroClassName
+  {
+    Barbarian,
+    Rogue,
+    Cleric,
+    Knight,
+    Blacksmith,
+    Wizard,
+    Ranger
+  }
+
   // Barbs hit hard
   // but HP doesnt increase as much
   public class Barbarian : Hero
   {
     public Barbarian(string name = "James") : base(100, "Barbarian")
     {
-      Name = name;
-
+      Debug.Log(Class);
       HPPerLevel = 4;
       BaseHP = 13;
       HP = BaseHP;
@@ -20,8 +32,11 @@ namespace Characters
       AttackPerLevel = 8;
 
       // TODO: Get sprite names for weapon and class
-      WeaponSpriteName = "AXE_SPRITE.png";
-      CharacterSpriteName = "";
+      WeaponSpriteName = "Equipment/Weapons/waraxe";
+      CharacterSpriteName = "Characters/Heroes/barbarian";
+      ClassIconSpriteName = WeaponSpriteName;
+
+      LoadAllSprites();
     }
 
   }
@@ -30,10 +45,9 @@ namespace Characters
   // but are squishier
   public class Rogue : Hero
   {
-    public Rogue(string name = "Jerry") : base(100, "Rogue")
+    public Rogue(string name = "Joobus") : base(100, "Rogue")
     {
-      Name = name;
-
+      Debug.Log(Class);
       HPPerLevel = 3;
       BaseHP = 10;
       HP = BaseHP;
@@ -42,8 +56,11 @@ namespace Characters
       AttackPerLevel = 4;
 
       // TODO: Get sprite names for weapon and class
-      WeaponSpriteName = "KNIFE_SPRITE.png";
-      CharacterSpriteName = "";
+      WeaponSpriteName = "Equipment/Weapons/knife";
+      CharacterSpriteName = "Characters/Heroes/rogue";
+      ClassIconSpriteName = WeaponSpriteName;
+
+      LoadAllSprites();
     }
 
     public override void PerformAttack(Character character)
@@ -59,8 +76,8 @@ namespace Characters
   {
     public Cleric(string name = "Janice") : base(100, "Cleric")
     {
-      Name = name;
-
+      Name = DiceRoller.GenerateName(false);
+      Debug.Log(Class);
       HPPerLevel = 4;
       BaseHP = 10;
       HP = BaseHP;
@@ -71,8 +88,11 @@ namespace Characters
       AttackSpeed = 0.5f;
 
       // TODO: Get sprite names for weapon and class
-      WeaponSpriteName = "BLUESTAFF_SPRITE.png";
-      CharacterSpriteName = "";
+      WeaponSpriteName = "Equipment/Weapons/cleric_staff";
+      CharacterSpriteName = "Characters/Heroes/cleric";
+      ClassIconSpriteName = WeaponSpriteName;
+
+      LoadAllSprites();
     }
 
     public override void PerformAttack(Character character)
@@ -90,8 +110,8 @@ namespace Characters
   {
     public Knight(string name = "Jake") : base(100, "Knight")
     {
-      Name = name;
-
+      Name = DiceRoller.GenerateName(false);
+      Debug.Log(Class);
       HPPerLevel = 10;
       BaseHP = 18;
       HP = BaseHP;
@@ -100,9 +120,12 @@ namespace Characters
       AttackPerLevel = 2;
 
       // TODO: Get sprite names for weapon and class
-      WeaponSpriteName = "SWORD_SPRITE.png";
-      ShieldSpriteName = "SHIELD_SPRITE.png";
-      CharacterSpriteName = "";
+      WeaponSpriteName = "Equipment/Weapons/sword";
+      ShieldSpriteName = "Equipment/Shields/kite";
+      CharacterSpriteName = "Characters/Heroes/knight";
+      ClassIconSpriteName = ShieldSpriteName;
+
+      LoadAllSprites();
     }
 
     // Knights take 1 less damage per level with each attack
@@ -117,8 +140,7 @@ namespace Characters
   {
     public Blacksmith(string name = "Jerry") : base(100, "Blacksmith")
     {
-      Name = name;
-
+      Debug.Log(Class);
       HPPerLevel = 10;
       BaseHP = 18;
       HP = BaseHP;
@@ -127,8 +149,11 @@ namespace Characters
       AttackPerLevel = 2;
 
       // TODO: Get sprite names for weapon and class
-      WeaponSpriteName = "HAMMER_SPRITE.png";
-      CharacterSpriteName = "";
+      WeaponSpriteName = "Equipment/Weapons/hammer";
+      CharacterSpriteName = "Characters/Heroes/blacksmith";
+      ClassIconSpriteName = WeaponSpriteName;
+
+      LoadAllSprites();
     }
   }
 
@@ -138,8 +163,7 @@ namespace Characters
   {
     public Wizard(string name = "Jeddddd") : base(100, "Wizard")
     {
-      Name = name;
-
+      Debug.Log(Class);
       HPPerLevel = 2;
       BaseHP = 10;
       HP = BaseHP;
@@ -150,8 +174,11 @@ namespace Characters
       AttackSpeed = 0.5f;
 
       // TODO: Get sprite names for weapon and class
-      WeaponSpriteName = "PURPLESTAFF.png";
-      CharacterSpriteName = "";
+      WeaponSpriteName = "Equipment/Weapons/wizard_staff";
+      CharacterSpriteName = "Characters/Heroes/wizard";
+      ClassIconSpriteName = WeaponSpriteName;
+
+      LoadAllSprites();
     }
   }
 
@@ -160,7 +187,7 @@ namespace Characters
   {
     public Ranger(string name = "Jake") : base(100, "Ranger")
     {
-      Name = name;
+      Debug.Log(Class);
 
       HPPerLevel = 5;
       BaseHP = 14;
@@ -170,15 +197,18 @@ namespace Characters
       AttackPerLevel = 6;
 
       // TODO: Get sprite names for weapon and class
-      WeaponSpriteName = "SWORD_SPRITE.png";
-      ShieldSpriteName = "SHIELD_SPRITE.png";
-      CharacterSpriteName = "";
+      WeaponSpriteName = "Equipment/Weapons/bow";
+      CharacterSpriteName = "Characters/Heroes/ranger";
+      ClassIconSpriteName = WeaponSpriteName;
+
+      LoadAllSprites();
     }
 
-    // Knights take 1 less damage per level with each attack
+    // Rangers can avoid damage sometimes
     public override void ReceiveAttack(int damage)
     {
-      HP -= damage - (1 * Level);
+      // TODO: RNG avoid damage
+      HP -= damage;
     }
   }
 }

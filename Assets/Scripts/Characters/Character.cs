@@ -10,6 +10,7 @@ namespace Characters
     public int Level { get; set; }
     public int Status { get; set; } = 0;
 
+
     // Weapon sprite
     public string WeaponSpriteName { get; set; } = "";
     public bool HasWeapon
@@ -19,9 +20,10 @@ namespace Characters
         return WeaponSpriteName.Length > 0 ? true : false;
       }
     }
+    public Sprite WeaponSprite { get; set; }
 
     // Shield sprite
-    public string ShieldSpriteName { get; set; }
+    public string ShieldSpriteName { get; set; } = "";
     public bool HasShield
     {
       get
@@ -29,9 +31,18 @@ namespace Characters
         return ShieldSpriteName.Length > 0 ? true : false;
       }
     }
+    public Sprite ShieldSprite { get; set; }
 
     // Sprite
-    public string CharacterSpriteName { get; set; }
+    public string CharacterSpriteName { get; set; } = "";
+    public Sprite CharacterSprite { get; set; }
+    public bool HasCharacter
+    {
+      get
+      {
+        return CharacterSpriteName.Length > 0 ? true : false;
+      }
+    }
 
     public int HP { get; set; }
     public int BaseHP { get; set; } = 10;
@@ -69,6 +80,12 @@ namespace Characters
     public Character(string name, int level)
     {
       Name = name;
+      Level = level;
+    }
+
+    public Character(int level)
+    {
+      Name = DiceRoller.GenerateName(true);
       Level = level;
     }
 
@@ -115,5 +132,42 @@ namespace Characters
     {
       XP += amt;
     }
+
+    public void LoadCharacterSprite()
+    {
+      if (HasCharacter)
+      {
+        CharacterSprite = ResourceLoader.LoadResource<Sprite>(CharacterSpriteName);
+      }
+      else
+      {
+        Debug.Log("No Character");
+      }
+    }
+
+    public void LoadWeaponSprite()
+    {
+      if (HasWeapon)
+      {
+        WeaponSprite = ResourceLoader.LoadResource<Sprite>(WeaponSpriteName);
+      }
+      else
+      {
+        Debug.Log("No Weapon");
+      }
+    }
+
+    public void LoadShieldSprite()
+    {
+      if (HasShield)
+      {
+        ShieldSprite = ResourceLoader.LoadResource<Sprite>(ShieldSpriteName);
+      }
+      else
+      {
+        Debug.Log("No Shield");
+      }
+    }
+
   }
 }

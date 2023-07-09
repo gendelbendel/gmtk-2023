@@ -7428,17 +7428,35 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1656327173}
   m_CullTransparentMesh: 1
+--- !u!1 &1665715077 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6016960080911644582, guid: 79f14be73187fbc4396d337037133208, type: 3}
+  m_PrefabInstance: {fileID: 8841205382080228852}
+  m_PrefabAsset: {fileID: 0}
 --- !u!114 &1665715078 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 5929462778668688384, guid: 79f14be73187fbc4396d337037133208, type: 3}
   m_PrefabInstance: {fileID: 8841205382080228852}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
+  m_GameObject: {fileID: 1665715077}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: a7ec651b2627a704faa08fcbaaf8aa82, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &1665715080
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1665715077}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f0cc2097c9db2a745b0c16d0de88f7f0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  heroRowPrefab: {fileID: 4971420227983976575, guid: 2e9ed71dcf81d19409e435cedbba7df2, type: 3}
 --- !u!1 &1816869842
 GameObject:
   m_ObjectHideFlags: 0
@@ -8941,6 +8959,10 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8433721914452138021, guid: 2e9ed71dcf81d19409e435cedbba7df2, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 985578b1db7e5cf478ac666a5fc654d7, type: 2}
     - target: {fileID: 8481612188305659459, guid: 2e9ed71dcf81d19409e435cedbba7df2, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
@@ -9558,5 +9580,8 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 6016960080911644582, guid: 79f14be73187fbc4396d337037133208, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1665715080}
   m_SourcePrefab: {fileID: 100100000, guid: 79f14be73187fbc4396d337037133208, type: 3}
