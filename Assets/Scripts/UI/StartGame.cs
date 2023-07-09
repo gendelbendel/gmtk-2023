@@ -20,7 +20,7 @@ public class TitleScreenUI : MonoBehaviour
     // Update is called once per frame
     private void StartNewGame()
     {
-        SceneManager.LoadScene("IntroScrawl");
+        SceneManager.LoadScene("SampleScene");
         
     }
 }

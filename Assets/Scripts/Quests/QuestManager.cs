@@ -26,7 +26,7 @@ public class QuestManager : MonoBehaviour
     _failedQuests = new List<Quest>();
     _currentQuestOptions = new List<Quest>();
 
-    _currentMaxQuestOptions = 3;
+    _currentMaxQuestOptions = 2;
     _absoluteMaxQuestOptions = 4;
     _highlightedQuestIndex = -1;
     // _hasConfirmedQuest = false;
