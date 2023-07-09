@@ -12,7 +12,7 @@ The game is unfinished for GMTK 2023, but the idea was:
 
 ## Contributors
 
-gendelbendel/dvbb: Lead programmer
-sunshinepunch: Programmer, ideas, story
-grizzgot: Art, ideas
-nvvy: Asset gathering, music
+- gendelbendel/dvbb: Lead programmer
+- sunshinepunch: Programmer, ideas, story
+- grizzgot: Art, ideas
+- nvvy: Asset gathering, music
